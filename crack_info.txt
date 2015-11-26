@@ -1,0 +1,120 @@
+health
+8B542408668B421466294112c3
+.0088947C: C3                            5retn ; -^-^-^-^-^-^-^-^-^-^-^-^-^-^-^-
+.0088947D: 8B542408                      4mov          edx,[esp][8]
+.00889481: 668B4214                       mov          ax,[edx][014]
+.00889485: 66294112                       sub          [ecx][012],ax
+.00889489: C3                             retn ; -^-^-^-^-^-^-^-^-^-^-^-^-^-^-^-
+
+
+air
+806666EF2BE88B15
+004BF35D - 8B 8E B8000000             - mov ecx,[esi+000000B8]
+004BF363 - 0FBF AA FE000000           - movsx ebp,word ptr [edx+000000FE]
+004BF36A - 89 4C 24 14                - mov [esp+14],ecx
+004BF36E - E8 F15B4600                - call 00924F64
+004BF373 - 80 66 66 EF                - and byte ptr [esi+66],EF
+004BF377 - 2B E8                      - sub ebp,eax
+004BF379 - 8B 15 5C09F600             - mov edx,[00F6095C] : [00001000]
+004BF37F - 89 6C 24 1C                - mov [esp+1C],ebp
+004BF383 - 33 ED                      - xor ebp,ebp
+004BF385 - DB 44 24 1C                - fild dword ptr [esp+1C]
+
+
+weapons clip
+9090909090909090a1????????48a3????????c3
+.004ABEA8: 9090909090909090               nop
+.004ABEB0: A12C33A000                     mov          eax,[000A0332C]
+.004ABEB5: 48                             dec          eax
+.004ABEB6: A32C33A000                     mov          [000A0332C],eax
+           C3                             retn ; -^-^-^-^-^-^-^-^-^-^-^-^-^-^-^-
+
+
+
+
+weapons
+7522668B54240866291441
+.0087B9B5: 9090909090909090909090         nop
+.0087B9C0: E8BB2FC7FF                     call        .0004EE980 --?4
+.0087B9C5: 8B0C85C0709E00                 mov          ecx,[eax]*4[0009E70C0]
+.0087B9CC: 8B442404                       mov          eax,[esp][4]
+.0087B9D0: F6C502                         test         ch,2
+.0087B9D3: 8B0D08E6A300                   mov          ecx,[000A3E608]
+.0087B9D9: 7522                           jnz         .00087B9FD --?5
+.0087B9DB: 668B542408                     mov          dx,[esp][8]
+.0087B9E0: 66291441                       sub          [ecx][eax]*2,dx
+.0087B9E4: 8B0D08E6A300                   mov          ecx,[000A3E608]
+.0087B9EA: 66833C4100                     cmp          w,[ecx][eax]*2,0
+.0087B9EF: 7D0C                           jge         .00087B9FD --?5
+.0087B9F1: 66C704410000                   mov          w,[ecx][eax]*2,0
+.0087B9F7: 8B0D08E6A300                   mov          ecx,[000A3E608]
+.0087B9FD: 0FBF0441                      5movsx        eax,w,[ecx][eax]*2
+
+
+
+items
+8B4424048B0D????????668B542408662914418b0d????????66833C4100
+.0087BA01: C3                             retn ; -^-^-^-^-^-^-^-^-^-^-^-^-^-^-^-
+.0087BA02: 9090909090909090909090909090   nop
+.0087BA10: 8B442404                       mov          eax,[esp][4]
+.0087BA14: 8B0D10E6A300                   mov          ecx,[000A3E610]
+.0087BA1A: 668B542408                     mov          dx,[esp][8]
+.0087BA1F: 66291441                       sub          [ecx][eax]*2,dx
+.0087BA23: 8B0D10E6A300                   mov          ecx,[000A3E610]
+.0087BA29: 66833C4100                     cmp          w,[ecx][eax]*2,0
+.0087BA2E: 7D0C                           jge         .00087BA3C --?4
+.0087BA30: 66C704410000                   mov          w,[ecx][eax]*2,0
+.0087BA36: 8B0D10E6A300                   mov          ecx,[000A3E610]
+.0087BA3C: 0FBF0441                      4movsx        eax,w,[ecx][eax]*2
+.0087BA40: C3                             retn ; -^-^-^-^-^-^-^-^-^-^-^-^-^-^-^-
+
+
+
+
+
+
+
+
+
+
+crack
+9090909056??????????8BF085F6750F
+.008DCF7B: C3                             retn ; -^-^-^-^-^-^-^-^-^-^-^-^-^-^-^-
+.008DCF7C: 90909090                       nop
+.008DCF80: 56                             push         esi
+.008DCF81: E8AA080000                     call        .0008DD830 --?4
+.008DCF86: 8BF0                           mov          esi,eax
+.008DCF88: 85F6                           test         esi,esi
+.008DCF8A: 750F                           jnz         .0008DCF9B --?5
+.008DCF8C: 6A0E                           push         00E
+.008DCF8E: 6830100100                     push         000011030 ;' ??0'
+.008DCF93: E858FAFFFF                     call        .0008DC9F0 --?6
+.008DCF98: 83C408                         add          esp,8
+.008DCF9B: 8BC6                          5mov          eax,esi
+.008DCF9D: 5E                             pop          esi
+.008DCF9E: C3                             retn ; -^-^-^-^-^-^-^-^-^-^-^-^-^-^-^-
+
+.008DD830: 81EC50020000                   sub          esp,000000250 ;'  ?P'
+.008DD836: 53                             push         ebx
+.008DD837: 55                             push         ebp
+.008DD838: 56                             push         esi
+.008DD839: 57                             push         edi
+.008DD83A: 8D442410                       lea          eax,[esp][010]
+.008DD83E: 50                             push         eax
+.008DD83F: 6819000200                     push         000020019
+.008DD844: 33F6                           xor          esi,esi
+.008DD846: 56                             push         esi
+.008DD847: 68B0D69E00                     push         0009ED6B0 ;'software\KONAMI\MGS2S' --?1
+.008DD84C: 6801000080                     push         080000001 ;'Ç  ?'
+.008DD851: C7442430A4D69E00               mov          d,[esp][030],0009ED6A4 ;'setup.exe' --?2
+.008DD859: C744243494D69E00               mov          d,[esp][034],0009ED694 ;'engine32.cab' --?3
+.008DD861: C744243888D69E00               mov          d,[esp][038],0009ED688 ;'Autorun.inf' --?4
+.008DD869: C744243C7CD69E00               mov          d,[esp][03C],0009ED67C ;'setup.inx' --?5
+.008DD871: C744244070D69E00               mov          d,[esp][040],0009ED670 ;'setup.ini' --?6
+.008DD879: C744244464D69E00               mov          d,[esp][044],0009ED664 ;'setup.boot' --?7
+.008DD881: C744244858D69E00               mov          d,[esp][048],0009ED658 ;'data1.cab' --?8
+.008DD889: C744244C4CD69E00               mov          d,[esp][04C],0009ED64C ;'data1.hdr' --?9
+.008DD891: C744245040D69E00               mov          d,[esp][050],0009ED640 ;'layout.bin' --?A
+.008DD899: C744245430D69E00               mov          d,[esp][054],0009ED630 ;'MGS2SSetup.exe' --?B
+.008DD8A1: C744245824D69E00               mov          d,[esp][058],0009ED624 ;'mgs2.exe' --?C
+.008DD8A9: C744245C14D69E00               mov          d,[esp][05C],0009ED614 ;'mgs2_sse.exe' --?D
