@@ -218,6 +218,7 @@ int read_proc_mem(char *windowname,int address,unsigned char *data,int len)
 		return FALSE;
 	}
 	ReadProcessMemory(phandle,address,data,len,&bread);
+	CloseHandle(phandle);
 	return TRUE;
 }
 
@@ -240,6 +241,7 @@ int write_proc_mem(char *windowname,int address,unsigned char *data,int len)
 	}
 
 	WriteProcessMemory(phandle,address,data,len,&bread);
+	CloseHandle(phandle);
 	return TRUE;
 }
 

@@ -96,35 +96,6 @@ LINK32=link.exe
 
 SOURCE=.\MGS2.c
 # End Source File
-# Begin Source File
-
-SOURCE=.\resource.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\Script1.rc
-# End Source File
-# Begin Source File
-
-SOURCE=.\TEXT.asm
-
-!IF  "$(CFG)" == "MGS2 - Win32 Release"
-
-!ELSEIF  "$(CFG)" == "MGS2 - Win32 Debug"
-
-# Begin Custom Build
-IntDir=.\Debug
-InputPath=.\TEXT.asm
-InputName=TEXT
-
-"$(IntDir)\$(InputName).obj" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
-	nasmw -t -f  win32 -o$(IntDir)\$(InputName).obj -Xvc $(InputName).asm
-
-# End Custom Build
-
-!ENDIF 
-
-# End Source File
 # End Group
 # Begin Group "Header Files"
 
